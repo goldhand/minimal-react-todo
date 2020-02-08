@@ -1,9 +1,0 @@
-/* reset so sizing makes more sense */
-* {
-  box-sizing: border-box;
-}
-/* remove defaults, set font family */
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
