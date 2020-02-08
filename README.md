@@ -1,5 +1,7 @@
 # Minimal React Todo Example
 
+### [Live example at www.willfarley.org/minimal-react-todo/](https://www.willfarley.org/minimal-react-todo/)
+
 # Run this
 
 - clone the repository
