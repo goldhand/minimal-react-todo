@@ -7,21 +7,35 @@ class App extends React.Component {
 
   state = {
     todos: {},
-    counter: 0,
   }
 
-  handleCreate = text => {
-    this.setState({
-      todos: {
-        ...this.state.todos,
-        [this.state.counter] : {
-          complete: false,
-          text,
-          id: this.state.counter,
-        },
+  async componentDidMount () {
+    const response = await fetch('/api/todos');
+    const todos = await response.json();
+    this.setState({ todos });
+  }
+
+  async handleCreate (text) {
+    const todo = {
+      complete: false,
+      text,
+    }
+    const response = await fetch('/api/todos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
       },
-      counter: this.state.counter + 1,
+      body: JSON.stringify(todo) // body data type must match "Content-Type" header
     });
+    if (response.status === 'success') {
+      todo.id = response.id;
+      this.setState({
+        todos: {
+          ...this.state.todos,
+          [todo.id]: todo,
+        },
+      });
+    }
   }
 
   toggleTodo = id => {
