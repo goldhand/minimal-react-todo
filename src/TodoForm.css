@@ -1,0 +1,21 @@
+.TodoForm {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  min-height: 30vh;
+}
+.TodoForm input {
+  font-size: 2rem;
+  line-height: 2em;
+  padding: 0 1rem;
+  width: 60vw;
+}
+.TodoForm button {
+  margin-left: 2rem;
+  padding: 0 1rem;
+  font-size: 2rem;
+  line-height: 2em;
+}
